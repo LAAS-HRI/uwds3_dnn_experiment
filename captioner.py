@@ -68,7 +68,7 @@ def captioner_model(pre_trained_embedding_file,
                     caption_max_length=15,
                     input_image_shape=(128, 128, 3),
                     base_image_model="ResNet50",
-                    freeze_base_layers=42,
+                    freeze_base_layers=100,
                     vocab_size=40000,
                     vector_dim=300):
     seq_model = sequence_model(pre_trained_embedding_file, caption_max_length, vector_dim)
@@ -78,5 +78,5 @@ def captioner_model(pre_trained_embedding_file,
 
 
 if __name__ == '__main__':
-    glove_embedding_file = "./glove/glove.6B.300d.txt"
+    glove_embedding_file = "./models/word_embeddings/glove.6B.300d.txt"
     model = captioner_model(glove_embedding_file)

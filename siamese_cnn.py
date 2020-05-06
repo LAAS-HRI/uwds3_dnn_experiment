@@ -1,14 +1,14 @@
 from word_embeddings import create_embedding_layer
-from siamese import siamese_model, train_siamese_network
+from siamese import siamese_model
 from keras.models import Model
-from keras.layers import Input, Dropout, Dense, Flatten, GlobalAveragePooling2D
+from keras.layers import Input, Dropout, Dense
 from keras.applications.resnet50 import ResNet50
 from keras.applications.vgg16 import VGG16
 from keras.applications.mobilenet import MobileNet
 from keras.applications.mobilenet_v2 import MobileNetV2
 
 
-def base_model(input_shape, vector_dim, base_model="ResNet50", freeze_layers=30):
+def base_model(input_shape, vector_dim, base_model="ResNet50", freeze_layers=150):
     """Create the base model of the siamese network
     """
     input = Input(input_shape)

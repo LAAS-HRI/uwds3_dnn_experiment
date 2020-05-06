@@ -25,5 +25,5 @@ def siamese_lstm(pre_trained_embedding_file, max_length, lstm_hidden_dim, vector
 
 
 if __name__ == '__main__':
-    glove_embedding_file = "./glove/glove.6B.300d.txt"
+    glove_embedding_file = "./models/word_embeddings/glove.6B.300d.txt"
     model = siamese_lstm(glove_embedding_file, 20, 256, 100)
