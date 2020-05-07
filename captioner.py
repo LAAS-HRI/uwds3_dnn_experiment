@@ -1,4 +1,4 @@
-from keras.layers import Input, Dropout, Dense, Concatenate, Add, LSTM, Embedding
+from keras.layers import Input, Dropout, Dense, Add, LSTM
 from keras.models import Model
 from keras.applications.resnet50 import ResNet50
 from keras.applications.vgg16 import VGG16

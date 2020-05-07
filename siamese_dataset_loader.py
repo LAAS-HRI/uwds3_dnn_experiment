@@ -55,21 +55,3 @@ class ImageDataGenerator(Sequence):
             y[i] = self.labels[ID]
 
         return X, keras.utils.to_categorical(y, num_classes=self.n_classes)
-
-    def create_pairs(x, y, num_classes):
-        """Positive and negative pair creation.
-        Alternates between positive and negative pairs.
-        """
-        pairs = []
-        labels = []
-        n = min([len(digit_indices[d]) for d in range(num_classes)]) - 1
-        for d in range(num_classes):
-            for i in range(n):
-                z1, z2 = digit_indices[d][i], digit_indices[d][i + 1]
-                pairs += [[x[z1], x[z2]]]
-                inc = random.randrange(1, num_classes)
-                dn = (d + inc) % num_classes
-                z1, z2 = digit_indices[d][i], digit_indices[dn][i]
-                pairs += [[x[z1], x[z2]]]
-                labels += [1, 0]
-        return np.array(pairs), np.array(labels)

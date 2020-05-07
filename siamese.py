@@ -39,7 +39,7 @@ def contrastive_loss(y_true, y_pred):
     return K.mean(y_true * square_pred + (1 - y_true) * margin_square)
 
 
-def siamese_model(input_shape, base_network, metric="euclidean", optimizer="adadelta"):
+def siamese_model(input_shape, base_network, metric="euclidean", optimizer="adam"):
     input_a = Input(input_shape)
     input_b = Input(input_shape)
     # Siamese network => same network for embedding is used to share the weights
