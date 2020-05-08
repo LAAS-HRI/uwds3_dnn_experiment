@@ -2,6 +2,13 @@ models/word_embeddings/
 
 data/
 
+exported_model/
+
 tensorboard/
+
+model.h5
+model.json
+test.png
+test2.png
 
 *.pyc
